@@ -50,7 +50,7 @@ module Tapioca
         say(
           "Tapioca attempted to load the Rails application after encountering a `config/application.rb` file, " \
             "but it failed. If your application uses Rails please ensure it can be loaded correctly before " \
-            "generating RBIs.\n#{e}",
+            "generating RBIs.\n#{e}\n#{e.backtrace&.join("\n")}",
           :yellow,
         )
         say("Continuing RBI generation without loading the Rails application.")
